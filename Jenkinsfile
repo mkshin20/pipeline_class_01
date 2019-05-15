@@ -10,7 +10,7 @@ pipeline {
     }
 }
 */
-
+/*
 pipeline {
     agent any
     stages {
@@ -26,4 +26,16 @@ pipeline {
         }
     }
 }
+*/
+node {
+    stage('Deploy') {
+        retry(3) {
+            echo "retry."
+        }
+
+        timeout(time: 3, unit: 'MINUTES') {
+            echo "sleep."
+        }
+    }
+} 
 
